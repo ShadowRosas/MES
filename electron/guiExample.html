@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' http://127.0.0.1:5000;"
+  />
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #2c2c2c;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a,
+    .navbar button {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 1px 1px; /* Ajusta el padding para hacer el botón más corto */
+      text-decoration: none;
+      font-size: 5px;
+      border: none; /* Remove default border for buttons */
+      width: 50px; /* Establece un ancho fijo para el botón */
+      background: none; /* Remove default background for buttons */
+    }
+
+    .navbar a:hover,
+    .navbar button:hover {
+      background: #ddd;
+      color: #2c2c2c;
+    }
+
+    .navbar button {
+      cursor: pointer; /* Change cursor to pointer for button */
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown button {
+      font-size: 10px; /* Match font size with navbar buttons */
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      min-width: 100px;
+      box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: #2c2c2c;
+      padding: 7px 7px;
+      text-decoration: none;
+      display: block;
+      font-size: 9px; /* Match font size with navbar buttons */
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #f9f9f9;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-button {
+      background-color: #f9f9f9;
+    }
+
+    .main {
+      padding: 1px;
+      margin-top: 10px;
+      height: 1500px; /* Used in this example to enable scrolling */
+    }
+  </style>
+  <title>Start</title>
+  <link rel="stylesheet" href="guiExample.css" />
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="dropdown">
+      <button id="lineSwitcher" class="dropdown-button">Lines</button>
+      <div id="lineDetails" class="dropdown-content">
+        <!-- Dropdown items will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="status_message2"></div> <!-- Contenedor para el mensaje -->
+    <button id="start_code2">Line information</button>
+    <div id="output2"></div>
+  </div>
+
+  <div class="container">
+    <div id="status_message"></div> <!-- Contenedor para el mensaje -->
+    <button id="start_code">Launch program</button>
+    <div id="output"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="authForm">
+            <label for="username">User:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="iniciar_sesion">Login</button>
+            <p id="error" style="color: red; display: none;">Incorrect username or password.</p>
+        </form>
+    </div>
+</div>
+
+  <script src="modal.js"></script>
+  <script src="guiExample.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
