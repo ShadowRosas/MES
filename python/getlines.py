@@ -26,4 +26,4 @@ with open(archivo, 'w') as f:
             # Escribir la línea original si no es la variable objetivo
             f.write(linea)
 
-print(f"Variable '{nombre_variable}' has been updated to '{nuevo_valor}' in '{archivo}'.")
+print(f"Line has been updated to '{nuevo_valor}' in '{archivo}'.")

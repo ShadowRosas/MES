@@ -39,7 +39,7 @@ value = read_variable_from_log(file_path, variable_name)
 
 # Mostrar el valor obtenido o pedir un nuevo valor
 if value:  # Esto evalúa si 'value' no es None ni una cadena vacía
-    print(f'The value of  {variable_name} is: {value}')
+    print(f'The value of the line is: {value}')
 else:
     line = sys.stdin.readline().strip()
     write_variable_to_log(file_path, variable_name, line)

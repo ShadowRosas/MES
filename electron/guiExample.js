@@ -227,14 +227,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-  // Añadir listener al botón "lineDetails"
-  const lineDetailsButton = document.getElementById("lineDetails");
+// Añadir listener al botón "lineDetails"
+const lineDetailsButton = document.getElementById("lineDetails");
 
-  // Primer listener
-  lineDetailsButton.addEventListener("click", sendCodeFunction2);
+// Primer listener para ejecutar sendCodeFunction2
+lineDetailsButton.addEventListener("click", sendCodeFunction2);
 
-  // Segundo listener
-  lineDetailsButton.addEventListener("click", sendCodeFunction);
+// Segundo listener para ejecutar sendCodeFunction y ocultar lineDetails
+lineDetailsButton.addEventListener("click", () => {
+  sendCodeFunction(); // Ejecutar la función
+
+  // Ocultar lineDetails después de ejecutar sendCodeFunction
+  const lineDetails = document.getElementById("lineDetails");
+  lineDetails.style.display = 'none'; // Ocultar el elemento
+});
 });
 
 

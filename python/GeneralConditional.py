@@ -80,7 +80,7 @@ def read_and_send_tags(plc_address, tags, url, plc_ips):
 
                     print(f"Read values - ST_ID: {ST_ID}, PassFail: {PassFail}, StartTm: {StartTm}, EndTm: {EndTm}, Sn: {Sn}, VarData: {VarData}, TestSpec: {TestSpec}, Trigger: {Trigger}, PartStatus: {PartStatus}", flush=True)  # Mensaje de depuración
 
-                    if Trigger == False:
+                    if Trigger == True:
                         # Leer toda la estructura de la etiqueta actual
                         data_structure = plc.read(tag).value
                         data_object = {
